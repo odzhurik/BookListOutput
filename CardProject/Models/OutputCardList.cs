@@ -8,10 +8,10 @@ namespace CardProject.Models
 {
     internal class OutputCardList
     {
-        private List<Card> cards;
-        public void CardListInit()
+        private List<Card> deck;
+        private void DeckInit()
         {
-            cards = new List<Card>();
+            deck = new List<Card>();
             int minValueCard = 2;
             int minValueHigherCard = 10;
             int maxValueCard = 11;
@@ -25,7 +25,7 @@ namespace CardProject.Models
                         card.Suit = (Suit)i;
                         card.CardName = (CardName)cardName;
                         card.CardValue = minValueHigherCard;
-                        cards.Add(card);
+                        deck.Add(card);
                     }
                     if ((CardName)cardName == CardName.Ace)
                     {
@@ -33,7 +33,7 @@ namespace CardProject.Models
                         card.Suit = (Suit)i;
                         card.CardName = (CardName)cardName;
                         card.CardValue = maxValueCard;
-                        cards.Add(card);
+                        deck.Add(card);
                         break;
                     }
                     if ((CardName)cardName <= CardName.Ten)
@@ -42,16 +42,31 @@ namespace CardProject.Models
                         card.Suit = (Suit)i;
                         card.CardName = (CardName)cardName;
                         card.CardValue = cardValue;
-                        cards.Add(card);
+                        deck.Add(card);
                     }
 
                 }
             }
         }
+        private List<Card> GenerateCardList()
+        {
+            List<Card> cardList = new List<Card>();
+            DeckInit();
+            Random rng = new Random();
+            int listCount = rng.Next(1,deck.Count);
+            foreach(Card card in deck)
+            {
+                if(listCount==cardList.Count)
+                {
+                    break;
+                }
+                cardList.Add(card);
+            }
+            return cardList;
+        }
         public void Output()
         {
-            CardListInit();
-            CardOutput.ConsoleOutput(cards);
+            CardOutput.ConsoleOutput(GenerateCardList());
         }
     }
 }
