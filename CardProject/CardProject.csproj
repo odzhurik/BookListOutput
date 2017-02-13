@@ -42,11 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Card.cs" />
-    <Compile Include="Models\CardName.cs" />
-    <Compile Include="Models\CardOutput.cs" />
-    <Compile Include="Models\OutputCardList.cs" />
-    <Compile Include="Models\Suit.cs" />
+    <Compile Include="Models\Book.cs" />
+    <Compile Include="Models\BookOutput.cs" />
+    <Compile Include="Models\OutputBookList.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

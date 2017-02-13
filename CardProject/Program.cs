@@ -11,8 +11,8 @@ namespace CardProject
     {
         static void Main(string[] args)
         {
-            OutputCardList outputCardList = new OutputCardList();
-            outputCardList.Output();
+            OutputBookList outputBookList = new OutputBookList();
+            outputBookList.Output();
                    
         }
     }

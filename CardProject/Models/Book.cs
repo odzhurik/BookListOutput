@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace CardProject.Models
 {
-    public enum Suit
+   internal class Book
     {
-        Hearts,
-        Clubs,
-        Diamonds,
-        Spades
+        public string Author { get; set; }
+        public string Title { get; set; }
     }
 }
